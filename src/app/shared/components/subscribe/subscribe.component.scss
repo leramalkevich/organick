@@ -1,0 +1,48 @@
+@use "../../../../assets/styles/mixins";
+@use "../../../../assets/styles/variables";
+@use "../../../../assets/styles/fonts";
+.subscribe {
+  background-image: url("../../../../assets/images/bg-images/subscribe-bg-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 105px 71px;
+  border-radius: 30px;
+  .subscribe-text-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .subscribe-title {
+      max-width: 357px;
+      @include mixins.title-text-styles(50px);
+      color: white;
+    }
+    .subscribe-action {
+      display: flex;
+      align-items: center;
+
+      .subscribe-input {
+        width: 349px;
+        background-color: white;
+        padding: 28px 23px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        margin-right: 6px;
+        outline: none;
+        border: 2px solid white;
+        font-size: 20px;
+        &::placeholder {
+          font-family: Roboto, sans-serif;
+          font-weight: 400;
+          font-style: italic;
+          font-size: 18px;
+          color: #ABABAB;
+        }
+      }
+      .button {
+        @include mixins.button-styles(220px, variables.$title-color, white);
+      }
+
+    }
+  }
+}

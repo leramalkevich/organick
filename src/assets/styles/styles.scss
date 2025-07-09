@@ -6,4 +6,89 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+app-layout router-outlet {
+  flex: 1 0 auto;
+}
+app-footer {
+  flex:0 0 auto;
+}
 
+body {
+  background-color: white;
+  font-family: OpenSans, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: variables.$text-color;
+}
+.container {
+  max-width: variables.$container-width;
+  margin: 0 auto;
+}
+
+.owl-carousel {
+  .owl-stage-outer {
+    .owl-stage {
+      .owl-item {
+        .user-image {
+          width: 115px;
+          height: 115px;
+          border-radius: 50%;
+          margin: 0 auto 20px auto;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        .stars {
+          margin-bottom: 25px!important;
+          svg {
+            margin-right: 3px;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+        .user-review-text {
+          margin-bottom: 20px!important;
+        }
+        .user-info {
+          margin-bottom: 19px!important;
+          .user-name {
+            font-family: Roboto, sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            color: variables.$title-color;
+          }
+          .user-add {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  .owl-dots {
+    .owl-dot {
+      span {
+        width: 8px;
+        height: 8px;
+        margin: 6px;
+      }
+      &.active {
+        span {
+          background-color: variables.$above-title-color!important;
+        }
+      }
+    }
+  }
+
+
+}

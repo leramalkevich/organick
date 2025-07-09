@@ -1,0 +1,62 @@
+@use "fonts";
+@use "variables";
+
+@mixin link-header-styles($f-size: 20px) {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: $f-size;
+  color: variables.$title-color;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@mixin button-circle-styles($bg-color: variables.$above-title-color, $svg-color: white){
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: $bg-color;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    fill: $svg-color;
+  }
+}
+
+@mixin above-title-text-styles() {
+  font-family: Yellowtail, sans-serif;
+  font-size: 36px;
+  color: variables.$above-title-color;
+  margin-bottom: 8px;
+}
+
+@mixin title-text-styles($f-size: 50px) {
+  font-family: Roboto, sans-serif;
+  font-weight: 800;
+  font-size: $f-size;
+  color: variables.$title-color;
+}
+
+@mixin button-styles($theme: 220px, $bg-color, $text-color) {
+  box-sizing: border-box;
+  padding: 28px;
+  width: $theme;
+  border-radius: 16px;
+  cursor: pointer;
+  border: 2px solid $bg-color;
+  //border: 1px solid $bg-color;
+  background-color: $bg-color;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: $text-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    margin-right: 10px;
+  }
+}
