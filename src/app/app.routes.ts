@@ -13,6 +13,7 @@ export const routes: Routes = [
     {path:'contact-us', loadComponent:()=>import('./views/contact-us/contact-us.component').then((m)=>m.ContactUsComponent)},
     {path:'licenses', loadComponent:()=>import('./views/licenses/licenses.component').then((m)=>m.LicensesComponent)},
     {path:'changelog', loadComponent:()=>import('./views/changelog/changelog.component').then((m)=>m.ChangelogComponent)},
+    {path:'password-protected', loadComponent:()=>import('./views/password-protected/password-protected.component').then((m)=>m.PasswordProtectedComponent)},
     {path:'**', loadComponent:()=>import('./views/not-found/not-found.component').then((m)=>m.NotFoundComponent)}
   ]}
 ];

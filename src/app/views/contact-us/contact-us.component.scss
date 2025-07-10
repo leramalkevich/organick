@@ -166,24 +166,24 @@
         .form-input {
           display: flex;
           flex-flow: column;
-          label {
-            font-family: Roboto, sans-serif;
-            font-weight: 600;
-            color: variables.$title-color;
-            margin-bottom: 26px;
-          }
-          input {
-            width: 569px;
-            border: 1px solid variables.$above-title-color;
-            box-sizing: border-box;
-            padding: 28px 23px 31px 23px;
-            outline: none;
-            border-radius: 16px;
-            &::placeholder {
-              font-style: italic;
-              color: #ABABAB;
-            }
-          }
+          //label {
+          //  font-family: Roboto, sans-serif;
+          //  font-weight: 600;
+          //  color: variables.$title-color;
+          //  margin-bottom: 26px;
+          //}
+          //input {
+          //  width: 569px;
+          //  border: 1px solid variables.$above-title-color;
+          //  box-sizing: border-box;
+          //  padding: 28px 23px 31px 23px;
+          //  outline: none;
+          //  border-radius: 16px;
+          //  &::placeholder {
+          //    font-style: italic;
+          //    color: #ABABAB;
+          //  }
+          //}
         }
       }
       .form-input {
