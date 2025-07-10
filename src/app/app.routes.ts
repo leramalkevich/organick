@@ -12,6 +12,7 @@ export const routes: Routes = [
     {path:'our-team', loadComponent:()=>import('./views/team/team.component').then((m)=>m.TeamComponent)},
     {path:'contact-us', loadComponent:()=>import('./views/contact-us/contact-us.component').then((m)=>m.ContactUsComponent)},
     {path:'licenses', loadComponent:()=>import('./views/licenses/licenses.component').then((m)=>m.LicensesComponent)},
+    {path:'changelog', loadComponent:()=>import('./views/changelog/changelog.component').then((m)=>m.ChangelogComponent)},
     {path:'**', loadComponent:()=>import('./views/not-found/not-found.component').then((m)=>m.NotFoundComponent)}
   ]}
 ];
