@@ -1,0 +1,84 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/fonts";
+@use "../../../assets/styles/mixins";
+
+.licenses-main-title {
+  background-color: #FAFAFA;
+  background-image: url("../../../assets/images/bg-images/licenses/licenses-bg-image.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .container {
+    padding: 83px;
+
+    .main-title {
+      @include mixins.title-text-styles(50px);
+      text-align: center;
+    }
+  }
+}
+
+.licenses-block {
+  padding-top: 150px;
+
+  .container {
+    .licenses-items {
+      .license-item {
+        margin-bottom: 100px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .license-item-title {
+          width: 300px;
+          @include mixins.title-text-styles(40px);
+        }
+
+        .license-item-description {
+          max-width: 831px;
+
+          p {
+            a {
+              font-family: OpenSans, sans-serif;
+              font-weight: 700;
+              text-decoration: none;
+              color: variables.$above-title-color;
+              cursor: pointer;
+            }
+
+            &:first-child {
+              margin-bottom: 45px;
+            }
+          }
+
+          .description-item {
+            margin-bottom: 45px;
+
+            &.pixcel {
+              margin-bottom: 0;
+            }
+
+            .description-item-title {
+              @include mixins.title-text-styles(30px);
+              margin-bottom: 11px;
+            }
+          }
+
+          .font-link {
+            font-weight: 700;
+            color: variables.$title-color;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+        &:last-child {
+          .license-item-description {
+            max-width: 709px;
+            margin-right: 122px;
+          }
+        }
+      }
+    }
+  }
+}

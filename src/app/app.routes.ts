@@ -11,6 +11,7 @@ export const routes: Routes = [
     {path:'blog', loadComponent:()=>import('./views/blog/blog.component').then((m)=>m.BlogComponent)},
     {path:'our-team', loadComponent:()=>import('./views/team/team.component').then((m)=>m.TeamComponent)},
     {path:'contact-us', loadComponent:()=>import('./views/contact-us/contact-us.component').then((m)=>m.ContactUsComponent)},
+    {path:'licenses', loadComponent:()=>import('./views/licenses/licenses.component').then((m)=>m.LicensesComponent)},
     {path:'**', loadComponent:()=>import('./views/not-found/not-found.component').then((m)=>m.NotFoundComponent)}
   ]}
 ];
