@@ -1,0 +1,21 @@
+<section class="news-main-title">
+  <div class="container">
+    <h1 class="news-title">Recent  News</h1>
+  </div>
+</section>
+
+<section class="news-articles">
+  <div class="container">
+    <div class="news-article-items" *ngIf="news">
+      <div class="news-article-item" *ngFor="let article of news">
+        <newsCard [newsArticle]="article"></newsCard>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="subscribe">
+  <div class="container">
+    <subscribe></subscribe>
+  </div>
+</section>

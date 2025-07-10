@@ -1,0 +1,327 @@
+@use "../../../assets/styles/fonts";
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins";
+
+.about-us-main-title {
+  background-image: url("../../../assets/images/bg-images/about/about-us-bg-image1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/images/bg-images/about/about-us-bg-image2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    z-index: 5;
+    position: relative;
+    padding: 184px 0;
+
+    .main-title {
+      @include mixins.title-text-styles(82px);
+      margin: 0 auto;
+      max-width: 350px;
+    }
+  }
+}
+
+.about-us-description {
+  padding-top: 68px;
+  background-image: url("../../../assets/images/bg-images/about/description-bg-image.png");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+
+  .container {
+    margin-top: 141px;
+    margin-bottom: 143px;
+    display: flex;
+    justify-content: flex-end;
+
+    .about-us-description-block {
+      max-width: 675px;
+
+      .about-us-above-title {
+        @include mixins.above-title-text-styles();
+      }
+
+      .about-us-title {
+        @include mixins.title-text-styles(50px);
+        max-width: 500px;
+      }
+
+      .about-us-description-text {
+        margin-top: 14px;
+        margin-bottom: 48px;
+
+        .description-text {
+          &:first-child {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .about-us-pros-items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 58px;
+
+        .about-us-pros-item {
+          max-width: 295px;
+          display: flex;
+          align-items: flex-start;
+
+          .pros-item-image {
+            width: 56px;
+            height: 56px;
+            margin-right: 15px;
+
+            svg {
+              width: 100%;
+              height: auto;
+            }
+          }
+
+          .pros-item-text {
+            font-family: Roboto, sans-serif;
+            font-weight: 500;
+            font-size: 25px;
+            color: variables.$title-color;
+          }
+
+        }
+      }
+
+      .about-us-action {
+        .button {
+          @include mixins.button-styles(226px, variables.$title-color, white);
+        }
+      }
+    }
+  }
+}
+
+.why-we {
+  background-color: variables.$light-grey-bg-color;
+  padding: 190px 0;
+
+  .container {
+    .why-we-description-block {
+      background-image: url("../../../assets/images/bg-images/about/why-we-bg-image.png");
+      background-size: contain;
+      background-position: right;
+      background-repeat: no-repeat;
+      margin-bottom: 91px;
+
+      .why-we-above-title {
+        @include mixins.above-title-text-styles();
+      }
+
+      .why-we-title {
+        @include mixins.title-text-styles(50px);
+        max-width: 524px;
+      }
+
+      .why-we-description-text {
+        max-width: 671px;
+        margin-top: 25px;
+
+        .description-text {
+          margin-bottom: 36px;
+        }
+
+        .description-pros-items {
+          max-width: 486px;
+
+          .description-pros-item {
+            &:first-child {
+              margin-bottom: 24px;
+            }
+
+            .pros-item-title {
+              background-color: #ECECEC;
+              border-radius: 49px;
+              padding: 35px 31px;
+              width: 339px;
+              margin-bottom: 12px;
+              display: flex;
+              align-items: center;
+
+              .circle {
+                width: 19px;
+                height: 19px;
+                border-radius: 50%;
+                box-sizing: border-box;
+                border: 4px solid variables.$above-title-color;
+                background-color: transparent;
+                margin-right: 7px;
+              }
+
+              span {
+                font-family: Roboto, sans-serif;
+                font-weight: 500;
+                font-size: 20px;
+                color: variables.$title-color;
+              }
+            }
+
+            .pros-item-text {
+              margin-left: 60px;
+            }
+          }
+        }
+      }
+
+    }
+
+    .advantage-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1118px;
+      margin: 0 auto;
+
+      .advantage-item {
+        max-width: 257px;
+        height: 335px;
+        border-radius: 30px;
+        background-color: white;
+        padding: 50px 35px 19px 35px;
+        box-sizing: border-box;
+
+        .advantage-item-image {
+          width: 95px;
+          height: 95px;
+          background-color: variables.$light-grey-bg-color;
+          border-radius: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+        }
+
+        .advantage-item-text {
+          margin-top: 15px;
+          text-align: center;
+
+          .advantage-item-text-title {
+            @include mixins.title-text-styles(23px);
+            margin-bottom: 12px;
+          }
+
+          .advantage-item-text-description {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.team {
+  padding-top: 177px;
+  padding-bottom: 202px;
+
+  .container {
+    .team-text-block {
+      max-width: 852px;
+      margin: 0 auto 42px auto;
+      text-align: center;
+
+      .team-above-title {
+        @include mixins.above-title-text-styles();
+      }
+
+      .team-title {
+        @include mixins.title-text-styles(50px);
+        margin-bottom: 16px;
+      }
+    }
+
+    .team-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.our-offer {
+  background-color: variables.$title-color;
+  padding: 188px 0;
+
+  .container {
+    text-align: center;
+
+    .our-offer-above-title {
+      @include mixins.above-title-text-styles();
+    }
+
+    .our-offer-title {
+      @include mixins.title-text-styles(50px);
+      color: white;
+      margin-bottom: 33px;
+    }
+
+    .offered-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .offered-item {
+        width: 334px;
+
+        .offered-item-image {
+          height: 314px;
+          background-repeat: no-repeat;
+          background-color: white;
+          border-radius: 30px;
+          background-size: contain;
+          margin-bottom: 24px;
+        }
+
+        .offered-item-name {
+          font-family: Roboto, sans-serif;
+          font-weight: 500;
+          font-size: 25px;
+          color: white;
+          text-align: center;
+        }
+
+        &:first-child {
+          .offered-item-image {
+            background-image: url("../../../assets/images/bg-images/about/offered/offered-item1.png");
+          }
+        }
+        &:nth-child(2) {
+          .offered-item-image {
+            background-image: url("../../../assets/images/bg-images/about/offered/offered-item2.png");
+          }
+        }
+        &:nth-child(3) {
+          .offered-item-image {
+            background-image: url("../../../assets/images/bg-images/about/offered/offered-item3.png");
+          }
+        }
+        &:last-child {
+          .offered-item-image {
+            background-image: url("../../../assets/images/bg-images/about/offered/offered-item4.png");
+          }
+        }
+      }
+    }
+  }
+}
+.subscribe {
+  padding-top: 141px;
+  padding-bottom: 117px;
+}

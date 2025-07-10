@@ -97,14 +97,14 @@
           </div>
         </div>
       </div>
-      <button class="button about-us-action">
+      <a routerLink="/shop" class="button about-us-action">
         <span>Shop Now</span>
         <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="10" cy="9.5" r="9.5" fill="#335B6B"/>
           <path d="M9.97641 6.12891L13.371 9.19342L9.97641 12.2579M12.8995 9.19342H6.01611" stroke="white"
                 stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </button>
+      </a>
     </div>
   </div>
 </section>
@@ -119,7 +119,7 @@
       <product-card *ngFor="let product of products" [product]="product"></product-card>
     </div>
     <div class="products-action">
-      <a class="button more-link">
+      <a routerLink="/shop" class="button more-link">
         <span>Load More</span>
         <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="9.68066" cy="9.5" r="9.5" fill="#335B6B"/>
@@ -256,14 +256,14 @@
         <div class="our-offer-title">We Offer Organic For You</div>
       </div>
       <div class="action">
-        <button class="button">
+        <a routerLink="/shop" class="button">
           <span>View All Product</span>
           <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="9.68066" cy="9.5" r="9.5" fill="#335B6B"/>
             <path d="M9.65708 6.12891L13.0516 9.19342L9.65708 12.2579M12.5802 9.19342H5.69678" stroke="white"
                   stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </button>
+        </a>
       </div>
     </div>
     <div class="offer-items">
@@ -334,83 +334,19 @@
         <div class="news-title">Discover weekly content about organic food, & more</div>
       </div>
       <div class="action">
-        <button class="button">
+        <a routerLink="/blog" class="button">
           <span>More News</span>
           <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="9.68066" cy="9.5" r="9.5" fill="#335B6B"/>
             <path d="M9.65708 6.12891L13.0516 9.19342L9.65708 12.2579M12.5802 9.19342H5.69678" stroke="white"
                   stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </button>
+        </a>
       </div>
     </div>
-    <div class="news-items">
-      <div class="news-item">
-        <div class="news-image">
-          <div class="news-date">
-            <div>25 Nov</div>
-          </div>
-          <div class="news-short-description">
-            <div class="news-written-by">
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M12.3161 1.45446C11.4741 0.516515 10.298 0 9 0C7.69504 0 6.51512 0.51339 5.67701 1.44553C4.82983 2.38793 4.41705 3.66873 4.51397 5.05176C4.70608 7.78031 6.71848 9.99994 9 9.99994C11.2815 9.99994 13.2905 7.78076 13.4856 5.05265C13.5838 3.68212 13.1684 2.404 12.3161 1.45446ZM16.6152 19.9999H1.38482C1.18547 20.0026 0.988051 19.9594 0.806921 19.8734C0.625791 19.7874 0.46551 19.6609 0.337738 19.503C0.0564959 19.1561 -0.0568664 18.6825 0.0270736 18.2035C0.392256 16.1133 1.53194 14.3575 3.32323 13.1249C4.91463 12.0307 6.93049 11.4285 9 11.4285C11.0695 11.4285 13.0854 12.0312 14.6768 13.1249C16.4681 14.3571 17.6077 16.1129 17.9729 18.203C18.0569 18.682 17.9435 19.1557 17.6623 19.5026C17.5345 19.6606 17.3743 19.7872 17.1931 19.8732C17.012 19.9592 16.8146 20.0025 16.6152 19.9999Z"
-                  fill="#EFD372"/>
-              </svg>
-              <span>By Rachi Card</span>
-            </div>
-            <div class="news-title">
-              The Benefits of Vitamin D & How to Get It
-            </div>
-            <div class="news-text">
-              Simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            </div>
-            <div class="news-action">
-              <a class="button">
-                <span>Read More</span>
-                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="9.5" cy="9.5" r="9.5" fill="#335B6B"/>
-                  <path d="M9.47641 6.12891L12.871 9.19342L9.47641 12.2579M12.3995 9.19342H5.51611" stroke="white"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="news-item">
-        <div class="news-image">
-          <div class="news-date">
-            <div>25 Nov</div>
-          </div>
-          <div class="news-short-description">
-            <div class="news-written-by">
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M12.3161 1.45446C11.4741 0.516515 10.298 0 9 0C7.69504 0 6.51512 0.51339 5.67701 1.44553C4.82983 2.38793 4.41705 3.66873 4.51397 5.05176C4.70608 7.78031 6.71848 9.99994 9 9.99994C11.2815 9.99994 13.2905 7.78076 13.4856 5.05265C13.5838 3.68212 13.1684 2.404 12.3161 1.45446ZM16.6152 19.9999H1.38482C1.18547 20.0026 0.988051 19.9594 0.806921 19.8734C0.625791 19.7874 0.46551 19.6609 0.337738 19.503C0.0564959 19.1561 -0.0568664 18.6825 0.0270736 18.2035C0.392256 16.1133 1.53194 14.3575 3.32323 13.1249C4.91463 12.0307 6.93049 11.4285 9 11.4285C11.0695 11.4285 13.0854 12.0312 14.6768 13.1249C16.4681 14.3571 17.6077 16.1129 17.9729 18.203C18.0569 18.682 17.9435 19.1557 17.6623 19.5026C17.5345 19.6606 17.3743 19.7872 17.1931 19.8732C17.012 19.9592 16.8146 20.0025 16.6152 19.9999Z"
-                  fill="#EFD372"/>
-              </svg>
-              <span>By Rachi Card</span>
-            </div>
-            <div class="news-title">
-              Our Favourite Summertime Tommeto
-            </div>
-            <div class="news-text">
-              Simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            </div>
-            <div class="news-action">
-              <a class="button">
-                <span>Read More</span>
-                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="9.5" cy="9.5" r="9.5" fill="#335B6B"/>
-                  <path d="M9.47641 6.12891L12.871 9.19342L9.47641 12.2579M12.3995 9.19342H5.51611" stroke="white"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
+    <div class="news-items" *ngIf="mainNews">
+      <div class="news-item" *ngFor="let article of mainNews">
+        <newsCard [newsArticle]="article"></newsCard>
       </div>
     </div>
   </div>

@@ -1,13 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, effect} from '@angular/core';
 import {ProductCardComponent} from '../../shared/components/product-card/product-card.component';
 import {CardType} from '../../../types/card.type';
 import {CommonModule} from '@angular/common';
 import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
 import {SubscribeComponent} from '../../shared/components/subscribe/subscribe.component';
+import {RouterLink} from '@angular/router';
+import {NewsService} from '../../shared/services/news.service';
+import {NewsType} from '../../../types/news.type';
+import {NewsCardComponent} from '../../shared/components/news-card/news-card.component';
 
 @Component({
   selector: 'app-main',
-  imports: [ProductCardComponent, CommonModule, CarouselModule, SubscribeComponent],
+  imports: [ProductCardComponent, CommonModule, CarouselModule, SubscribeComponent, RouterLink, NewsCardComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
@@ -22,71 +26,71 @@ export class MainComponent {
       newPrice: '$13.00',
       reviews: 5
     },
-      {
-        id: 2,
-        category: 'Fresh',
-        image: 'product2.png',
-        title: 'Fresh Banana Fruites',
-        oldPrice: '$20.00',
-        newPrice: '$14.00',
-        reviews: 5
-      },
-      {
-        id: 3,
-        category: 'Millets',
-        image: 'product3.png',
-        title: 'White Nuts',
-        oldPrice: '$20.00',
-        newPrice: '$15.00',
-        reviews: 5
-      },
-      {
-        id: 4,
-        category: 'Vegetable',
-        image: 'product4.png',
-        title: 'Vegan Red Tomato',
-        oldPrice: '$20.00',
-        newPrice: '$17.00',
-        reviews: 5
-      },
-      {
-        id: 5,
-        category: 'Health',
-        image: 'product5.png',
-        title: 'Mung Bean',
-        oldPrice: '$20.00',
-        newPrice: '$11.00',
-        reviews: 5
-      },
-      {
-        id: 6,
-        category: 'Nuts',
-        image: 'product6.png',
-        title: 'Brown Hazelnut',
-        oldPrice: '$20.00',
-        newPrice: '$12.00',
-        reviews: 5
-      },
-      {
-        id: 7,
-        category: 'Fresh',
-        image: 'product7.png',
-        title: 'Eggs',
-        oldPrice: '$20.00',
-        newPrice: '$17.00',
-        reviews: 5
-      },
-      {
-        id: 8,
-        category: 'Fresh',
-        image: 'product8.png',
-        title: 'Zelco Suji Elaichi Rusk',
-        oldPrice: '$20.00',
-        newPrice: '$15.00',
-        reviews: 5
-      }
-    ];
-  offerProducts:CardType[]=[
+    {
+      id: 2,
+      category: 'Fresh',
+      image: 'product2.png',
+      title: 'Fresh Banana Fruites',
+      oldPrice: '$20.00',
+      newPrice: '$14.00',
+      reviews: 5
+    },
+    {
+      id: 3,
+      category: 'Millets',
+      image: 'product3.png',
+      title: 'White Nuts',
+      oldPrice: '$20.00',
+      newPrice: '$15.00',
+      reviews: 5
+    },
+    {
+      id: 4,
+      category: 'Vegetable',
+      image: 'product4.png',
+      title: 'Vegan Red Tomato',
+      oldPrice: '$20.00',
+      newPrice: '$17.00',
+      reviews: 5
+    },
+    {
+      id: 5,
+      category: 'Health',
+      image: 'product5.png',
+      title: 'Mung Bean',
+      oldPrice: '$20.00',
+      newPrice: '$11.00',
+      reviews: 5
+    },
+    {
+      id: 6,
+      category: 'Nuts',
+      image: 'product6.png',
+      title: 'Brown Hazelnut',
+      oldPrice: '$20.00',
+      newPrice: '$12.00',
+      reviews: 5
+    },
+    {
+      id: 7,
+      category: 'Fresh',
+      image: 'product7.png',
+      title: 'Eggs',
+      oldPrice: '$20.00',
+      newPrice: '$17.00',
+      reviews: 5
+    },
+    {
+      id: 8,
+      category: 'Fresh',
+      image: 'product8.png',
+      title: 'Zelco Suji Elaichi Rusk',
+      oldPrice: '$20.00',
+      newPrice: '$15.00',
+      reviews: 5
+    }
+  ];
+  offerProducts: CardType[] = [
     {
       id: 9,
       category: 'Vegetable',
@@ -177,4 +181,16 @@ export class MainComponent {
       }
     },
   ]
+  mainNews: NewsType[] = [];
+
+  constructor(private newsService: NewsService) {
+    effect(() => {
+      this.newsService.mainNews().then((data) =>{
+        this.mainNews = data;
+      }, (error)=>{
+        console.log(error);
+      });
+    });
+  }
+
 }
