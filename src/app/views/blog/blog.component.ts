@@ -16,7 +16,6 @@ export class BlogComponent {
   constructor(private newsService:NewsService) {
     effect(()=>{
       this.news = this.newsService.news();
-      console.log(this.news);
     })
   }
 }

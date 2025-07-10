@@ -13,7 +13,8 @@ export class NewsService {
         description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
         author: 'Rachi Card',
         published: '25 Nov',
-        text: ''
+        subTitleText: 'Established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ',
+        text: 'Uniquely matrix economically sound value through cooperative technology. Competently parallel task fully researched data and enterprise process improvements. Collaboratively expedite quality manufactured products via client-focused results quickly communicate enabled technology and turnkey leadership skills. Uniquely enable accurate supply chains rather than friction technology. Preferred Form of Vitamin D? It is a long established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.'
       },
       {
         id: 2,
@@ -22,7 +23,8 @@ export class NewsService {
         description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
         author: 'Rachi Card',
         published: '25 Nov',
-        text: ''
+        subTitleText: 'Established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ',
+        text: 'Uniquely matrix economically sound value through cooperative technology. Competently parallel task fully researched data and enterprise process improvements. Collaboratively expedite quality manufactured products via client-focused results quickly communicate enabled technology and turnkey leadership skills. Uniquely enable accurate supply chains rather than friction technology. Preferred Form of Vitamin D? It is a long established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.'
       },
       {
         id: 3,
@@ -31,7 +33,8 @@ export class NewsService {
         description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
         author: 'Rachi Card',
         published: '25 Nov',
-        text: ''
+        subTitleText: 'Established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ',
+        text: 'Uniquely matrix economically sound value through cooperative technology. Competently parallel task fully researched data and enterprise process improvements. Collaboratively expedite quality manufactured products via client-focused results quickly communicate enabled technology and turnkey leadership skills. Uniquely enable accurate supply chains rather than friction technology. Preferred Form of Vitamin D? It is a long established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.'
       },
       {
         id: 4,
@@ -40,7 +43,8 @@ export class NewsService {
         description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
         author: 'Rachi Card',
         published: '25 Nov',
-        text: ''
+        subTitleText: 'Established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ',
+        text: 'Uniquely matrix economically sound value through cooperative technology. Competently parallel task fully researched data and enterprise process improvements. Collaboratively expedite quality manufactured products via client-focused results quickly communicate enabled technology and turnkey leadership skills. Uniquely enable accurate supply chains rather than friction technology. Preferred Form of Vitamin D? It is a long established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.'
       },
       {
         id: 5,
@@ -49,7 +53,8 @@ export class NewsService {
         description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
         author: 'Rachi Card',
         published: '25 Nov',
-        text: ''
+        subTitleText: 'Established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ',
+        text: 'Uniquely matrix economically sound value through cooperative technology. Competently parallel task fully researched data and enterprise process improvements. Collaboratively expedite quality manufactured products via client-focused results quickly communicate enabled technology and turnkey leadership skills. Uniquely enable accurate supply chains rather than friction technology. Preferred Form of Vitamin D? It is a long established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.'
       },
       {
         id: 6,
@@ -58,15 +63,19 @@ export class NewsService {
         description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
         author: 'Rachi Card',
         published: '25 Nov',
-        text: ''
+        subTitleText: 'Established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ',
+        text: 'Uniquely matrix economically sound value through cooperative technology. Competently parallel task fully researched data and enterprise process improvements. Collaboratively expedite quality manufactured products via client-focused results quickly communicate enabled technology and turnkey leadership skills. Uniquely enable accurate supply chains rather than friction technology. Preferred Form of Vitamin D? It is a long established fact that a reader will be distracted by the readable content of a page when looking a layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.'
       },
     ]
   }
 
-  getMainNews(){
+  getMainNews() {
     return Promise.resolve(this.getNews().slice(0, 2));
   }
+
   news = signal(this.getNews());
   mainNews = signal(this.getMainNews());
-  constructor() {}
+
+  constructor() {
+  }
 }

@@ -1,0 +1,68 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/fonts";
+@use "../../../assets/styles/mixins";
+
+.blog-article {
+  .blog-article-main {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 730px;
+
+    .container {
+      position: relative;
+      bottom: -80px;
+      box-shadow: 0px 14px 36px 0px #CCCCCC40;
+      border-radius: 30px;
+      padding: 76px 82px;
+      background-color: white;
+
+      .blog-article-main-info {
+        .article-info {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+
+          .posted-date {
+            max-width: 250px;
+            margin-right: 30px;
+
+            .posted-text {
+              font-weight: 600;
+              color: variables.$title-color;
+            }
+          }
+
+          .written-by {
+            display: flex;
+            align-items: center;
+
+            svg {
+              margin-right: 8px;
+            }
+          }
+        }
+
+        .article-main-description {
+          .article-title {
+            @include mixins.title-text-styles(70px);
+            margin-bottom: 20px;
+          }
+          .article-text {
+            max-width: 730px;
+          }
+        }
+      }
+    }
+  }
+  .blog-article-more {
+    padding-top: 150px;
+    .container {
+      max-width: 936px;
+    }
+  }
+}
+
+.subscribe {
+  padding: 121px 0;
+}

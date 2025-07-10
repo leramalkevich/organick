@@ -1,10 +1,11 @@
 import {Component, Input} from '@angular/core';
 import {NewsType} from '../../../../types/news.type';
 import {CommonModule} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'newsCard',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './news-card.component.html',
   styleUrl: './news-card.component.scss'
 })
@@ -16,7 +17,8 @@ export class NewsCardComponent {
     description: '',
     author: '',
     published: '',
+    subTitleText: '',
     text: ''
   }
-  pathToImage:string='/images/news/';
+  pathToImage: string = '/images/news/';
 }

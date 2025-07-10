@@ -5,5 +5,6 @@ export type NewsType = {
   description: string,
   author: string,
   published: string,
+  subTitleText:string,
   text: string
 }
