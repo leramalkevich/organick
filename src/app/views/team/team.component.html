@@ -1,0 +1,27 @@
+<section class="our-team-main-title">
+  <div class="container">
+    <h1 class="main-title">Our Team</h1>
+  </div>
+</section>
+
+<section class="our-team">
+  <div class="container">
+    <div class="our-team-above-title">Team</div>
+    <div class="our-team-title">Our Organic Experts</div>
+    <div class="our-team-description">
+      Simply dummy text of the printing and typesetting industry. Lorem had ceased to been the industry's standard dummy
+      text ever since the 1500s, when an unknown printer took a galley.
+    </div>
+    <div class="our-team-people" *ngIf="people">
+      <div class="our-team-person" *ngFor="let person of people">
+        <person-card [person]="person"></person-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="subscribe">
+  <div class="container">
+    <subscribe></subscribe>
+  </div>
+</section>
