@@ -1,0 +1,39 @@
+@use "../../../assets/styles/fonts";
+@use "../../../assets/styles/mixins";
+@use "../../../assets/styles/variables";
+
+.not-found {
+  background-image: url("../../../assets/images/bg-images/not-found/not-found-bg-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .container {
+    padding: 214px 0;
+    display: flex;
+    justify-content: flex-end;
+    .error-block {
+      max-width: 533px;
+      .error-404 {
+        background-image: url("../../../assets/images/bg-images/not-found/404.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 503px;
+        height: 220px;
+        margin: 0 auto;
+      }
+      .error-title {
+        @include mixins.title-text-styles(70px);
+        text-align: center;
+      }
+      .error-text {
+        font-family: OpenSans, sans-serif;
+        font-weight: 600;
+        margin-bottom: 40px;
+      }
+      .button {
+        @include mixins.button-styles(275px, variables.$title-color, white);
+      }
+    }
+  }
+}
