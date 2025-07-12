@@ -1,0 +1,142 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins";
+
+.quality-main-title {
+  background-image: url("../../../assets/images/bg-images/quality/quality-bg-image1.png");
+  @include mixins.main-title-bg-styles();
+  &::after {
+    content: "";
+    @include mixins.main-title-after-style();
+    background-image: url("../../../assets/images/bg-images/quality/quality-bg-image2.png");
+  }
+  .container {
+    padding: 184px 0;
+    z-index: 55;
+    position: relative;
+    .main-title {
+      @include mixins.title-text-styles(70px);
+      text-align: center;
+    }
+  }
+}
+
+.quality-service-block {
+  padding-top: 182px;
+  .container {
+    .quality-service-article {
+      .service-image {
+        background-image: url("../../../assets/images/bg-images/quality/quality-image.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 742px;
+      }
+      .service-article {
+        padding-top: 78px;
+        max-width: 936px;
+        margin: 0 auto;
+        .service-article-title {
+          @include mixins.title-text-styles(50px);
+          margin-bottom: 28px;
+        }
+        .service-article-text {
+          margin-bottom: 70px;
+          p {
+            &:first-child {
+              margin-bottom: 30px;
+            }
+          }
+        }
+        .service-article-items {
+          margin-bottom: 70px;
+          .service-article-item {
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .article-item-image {
+              width: 379px;
+              min-height: 250px;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              border-radius: 20px;
+            }
+            .article-item-description {
+              max-width: 537px;
+              min-height: 250px;
+              box-sizing: border-box;
+              padding: 63px 45px;
+              background-color: variables.$light-grey-bg-color;
+              border-radius: 20px;
+              .article-item-description-title {
+                font-weight: 500;
+                font-size: 25px;
+                color: variables.$title-color;
+                margin-bottom: 7px;
+              }
+
+            }
+            &:first-child {
+              .article-item-image {
+                background-image: url("../../../assets/images/bg-images/quality/item-Image1.png");
+              }
+            }
+            &:last-child {
+              margin-bottom: 0;
+              flex-flow: row-reverse;
+              .article-item-image {
+                background-image: url("../../../assets/images/bg-images/quality/item-Image2.png");
+              }
+            }
+          }
+        }
+        .service-article-text {
+          &.more-article-text {
+            margin-bottom: 59px;
+            .more-article-text-title {
+              @include mixins.title-text-styles(35px);
+              margin-bottom: 11px;
+            }
+          }
+        }
+        .more-article-items {
+          display: flex;
+          align-items: center;
+
+          .more-article-item {
+            background-color: variables.$light-grey-bg-color;
+            border-radius: 100px;
+            box-sizing: border-box;
+            padding: 15px 53px 15px 17px;
+            display: flex;
+            align-items: center;
+            margin-right: 28px;
+            &:last-child {
+              margin-right: 0;
+            }
+            .more-article-item-count {
+              @include mixins.button-circle-styles(variables.$above-title-color, white);
+              color: white;
+              width: 69px;
+              height: 69px;
+              font-family: Roboto, sans-serif;
+              font-weight: 700;
+              font-size: 25px;
+              margin-right: 25px;
+            }
+            .more-article-item-text {
+              @include mixins.title-text-styles(25px);
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.subscribe {
+  padding: 131px 0 120px 0;
+}

@@ -12,6 +12,7 @@ export const routes: Routes = [
     {path:'blog-article/:id', loadComponent:()=>import('./views/blog-article/blog-article.component').then((m)=>m.BlogArticleComponent)},
     {path:'our-team', loadComponent:()=>import('./views/team/team.component').then((m)=>m.TeamComponent)},
     {path:'services', loadComponent:()=>import('./views/services/services.component').then((m)=>m.ServicesComponent)},
+    {path:'quality-standard', loadComponent:()=>import('./views/quality/quality.component').then((m)=>m.QualityComponent)},
     {path:'contact-us', loadComponent:()=>import('./views/contact-us/contact-us.component').then((m)=>m.ContactUsComponent)},
     {path:'licenses', loadComponent:()=>import('./views/licenses/licenses.component').then((m)=>m.LicensesComponent)},
     {path:'changelog', loadComponent:()=>import('./views/changelog/changelog.component').then((m)=>m.ChangelogComponent)},
