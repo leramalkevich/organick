@@ -1,4 +1,4 @@
-import {Component, effect} from '@angular/core';
+import {Component, effect, OnInit} from '@angular/core';
 import {ProductCardComponent} from '../../shared/components/product-card/product-card.component';
 import {CardType} from '../../../types/card.type';
 import {CommonModule} from '@angular/common';
@@ -8,6 +8,7 @@ import {RouterLink} from '@angular/router';
 import {NewsService} from '../../shared/services/news.service';
 import {NewsType} from '../../../types/news.type';
 import {NewsCardComponent} from '../../shared/components/news-card/news-card.component';
+import {ProductsService} from '../../shared/services/products.service';
 
 @Component({
   selector: 'app-main',
@@ -15,119 +16,9 @@ import {NewsCardComponent} from '../../shared/components/news-card/news-card.com
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
-export class MainComponent {
-  products: CardType[] = [
-    {
-      id: 1,
-      category: 'Vegetable',
-      image: 'product1.png',
-      title: 'Calabrese Broccoli',
-      oldPrice: '$20.00',
-      newPrice: '$13.00',
-      reviews: 5
-    },
-    {
-      id: 2,
-      category: 'Fresh',
-      image: 'product2.png',
-      title: 'Fresh Banana Fruites',
-      oldPrice: '$20.00',
-      newPrice: '$14.00',
-      reviews: 5
-    },
-    {
-      id: 3,
-      category: 'Millets',
-      image: 'product3.png',
-      title: 'White Nuts',
-      oldPrice: '$20.00',
-      newPrice: '$15.00',
-      reviews: 5
-    },
-    {
-      id: 4,
-      category: 'Vegetable',
-      image: 'product4.png',
-      title: 'Vegan Red Tomato',
-      oldPrice: '$20.00',
-      newPrice: '$17.00',
-      reviews: 5
-    },
-    {
-      id: 5,
-      category: 'Health',
-      image: 'product5.png',
-      title: 'Mung Bean',
-      oldPrice: '$20.00',
-      newPrice: '$11.00',
-      reviews: 5
-    },
-    {
-      id: 6,
-      category: 'Nuts',
-      image: 'product6.png',
-      title: 'Brown Hazelnut',
-      oldPrice: '$20.00',
-      newPrice: '$12.00',
-      reviews: 5
-    },
-    {
-      id: 7,
-      category: 'Fresh',
-      image: 'product7.png',
-      title: 'Eggs',
-      oldPrice: '$20.00',
-      newPrice: '$17.00',
-      reviews: 5
-    },
-    {
-      id: 8,
-      category: 'Fresh',
-      image: 'product8.png',
-      title: 'Zelco Suji Elaichi Rusk',
-      oldPrice: '$20.00',
-      newPrice: '$15.00',
-      reviews: 5
-    }
-  ];
-  offerProducts: CardType[] = [
-    {
-      id: 9,
-      category: 'Vegetable',
-      image: 'product9.png',
-      title: 'Mung Bean',
-      oldPrice: '$20.00',
-      newPrice: '$11.00',
-      reviews: 5
-    },
-    {
-      id: 10,
-      category: 'Vegetable',
-      image: 'product10.png',
-      title: 'Brown Hazelnut',
-      oldPrice: '$20.00',
-      newPrice: '$12.00',
-      reviews: 5
-    },
-    {
-      id: 11,
-      category: 'Vegetable',
-      image: 'product11.png',
-      title: 'Onion',
-      oldPrice: '$20.00',
-      newPrice: '$17.00',
-      reviews: 5
-    },
-    {
-      id: 12,
-      category: 'Vegetable',
-      image: 'product12.png',
-      title: 'Cabbage',
-      oldPrice: '$20.00',
-      newPrice: '$17.00',
-      reviews: 5
-    },
-  ]
+export class MainComponent implements OnInit {
+  products: CardType[] = [];
+  offerProducts: CardType[] = [];
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -182,8 +73,9 @@ export class MainComponent {
     },
   ]
   mainNews: NewsType[] = [];
+  buttonShort:boolean|undefined;
 
-  constructor(private newsService: NewsService) {
+  constructor(private newsService: NewsService, private productsService: ProductsService) {
     effect(() => {
       this.newsService.mainNews().then((data) =>{
         this.mainNews = data;
@@ -191,6 +83,11 @@ export class MainComponent {
         console.log(error);
       });
     });
+  }
+  ngOnInit() {
+    this.buttonShort = this.newsService.buttonShort();
+    this.products = this.productsService.getRandomProducts(8);
+    this.offerProducts = this.productsService.getRandomProducts(4);
   }
 
 }

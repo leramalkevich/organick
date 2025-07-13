@@ -59,6 +59,54 @@
     padding-top: 150px;
     .container {
       max-width: 936px;
+      .text-from-article {
+        margin-bottom: 22px;
+      }
+      .more-text-to-make-it-long {
+        .more-text-item {
+          .more-text-item-title {
+            margin-bottom: 24px;
+          }
+          .more-text-item-text {
+            p {
+              margin-bottom: 30px;
+            }
+            .list-items {
+              li {
+                list-style-position: inside;
+                margin-bottom: 20px;
+              }
+            }
+          }
+          .quote-block {
+            margin-bottom: 50px;
+            background-color: #F1EDEA;
+            border-radius: 30px;
+            padding: 69px 59px;
+            .quote-text {
+              text-align: center;
+              font-family: OpenSans, sans-serif;
+              font-weight: 700;
+              font-size: 20px;
+              color: variables.$title-color;
+            }
+          }
+          &:first-child {
+            .more-text-item-title {
+              @include mixins.title-text-styles(50px);
+            }
+            .more-text-item-text {
+              margin-bottom: 50px;
+            }
+          }
+          &.last-item {
+            .more-text-item-title {
+              @include mixins.title-text-styles(35px);
+            }
+          }
+
+        }
+      }
     }
   }
 }

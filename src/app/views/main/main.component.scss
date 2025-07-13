@@ -426,6 +426,11 @@
           .button {
             @include mixins.button-styles(220px, white, variables.$title-color);
             border: 2px solid variables.$title-color;
+            transition: box-shadow .3s linear;
+            &:hover {
+              box-shadow: 0px 0px 30px 0px rgba(variables.$title-color,0.5);
+              transition: box-shadow .3s linear;
+            }
           }
         }
       }

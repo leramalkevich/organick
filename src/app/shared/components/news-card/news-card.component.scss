@@ -70,6 +70,20 @@
 
         .button {
           @include mixins.button-styles(220px, variables.$yellow-button-color, variables.$title-color);
+          &.button-link {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            justify-content: left;
+            &:hover {
+              box-shadow: none;
+              color: rgba(39, 76, 91, 0.8);
+              transition: all .3s linear;
+              svg circle {
+                fill: rgba(39, 76, 91, 0.8);
+              }
+            }
+          }
         }
       }
     }

@@ -21,4 +21,5 @@ export class NewsCardComponent {
     text: ''
   }
   pathToImage: string = '/images/news/';
+  @Input()shortButton: boolean|undefined;
 }

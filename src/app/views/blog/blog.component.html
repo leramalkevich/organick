@@ -8,7 +8,7 @@
   <div class="container">
     <div class="news-article-items" *ngIf="news">
       <div class="news-article-item" *ngFor="let article of news">
-        <newsCard [newsArticle]="article"></newsCard>
+        <newsCard [newsArticle]="article" [shortButton]="buttonShort"></newsCard>
       </div>
     </div>
   </div>

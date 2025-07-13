@@ -346,7 +346,7 @@
     </div>
     <div class="news-items" *ngIf="mainNews">
       <div class="news-item" *ngFor="let article of mainNews">
-        <newsCard [newsArticle]="article"></newsCard>
+        <newsCard [newsArticle]="article" [shortButton]="buttonShort"></newsCard>
       </div>
     </div>
   </div>

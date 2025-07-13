@@ -75,7 +75,7 @@ export class NewsService {
 
   news = signal(this.getNews());
   mainNews = signal(this.getMainNews());
+  buttonShort = signal(false);
 
-  constructor() {
-  }
+  constructor() {}
 }

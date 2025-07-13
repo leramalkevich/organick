@@ -118,6 +118,7 @@
             }
             .more-article-item-count {
               @include mixins.button-circle-styles(variables.$above-title-color, white);
+              cursor: none;
               color: white;
               width: 69px;
               height: 69px;

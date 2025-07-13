@@ -4,6 +4,11 @@
 
 .header {
   background-color: #FFFFFFE5;
+  transition: background-color .3s linear;
+  &.active {
+    transition: background-color .3s linear;
+    background-color: #FAFAFA;
+  }
   .container {
     max-width: 1596px;
     display: flex;
@@ -33,6 +38,67 @@
           li {
             list-style: none;
             margin-right: 50px;
+            &.dropdown {
+              cursor: pointer;
+              a {
+                margin-right: 3px;
+              }
+              span {
+                svg {
+                  transition: transform .2s linear;
+                  margin-bottom: 2px;
+                }
+              }
+              position: relative;
+              &:hover {
+                span {
+                  svg {
+                    transition: transform .2s linear;
+                    transform: rotate(180deg);
+                  }
+                }
+                .pages-content {
+                  opacity: 1;
+                  transform: translateY(0);
+                  pointer-events: auto;
+                }
+              }
+
+              .pages-content {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s;
+                pointer-events: none;
+                border-radius: 10px;
+                z-index: 67;
+                a {
+                  padding: 17px;
+                  font-size: 18px;
+                  display: block;
+                  &:hover {
+                    background-color:  #FAFAFA;
+                  }
+                  &:first-child {
+                    &:hover {
+                      border-top-right-radius: 10px;
+                      border-top-left-radius: 10px;
+                    }
+                  }
+                  &:last-child {
+                    &:hover {
+                      border-bottom-right-radius: 10px;
+                      border-bottom-left-radius: 10px;
+                    }
+                  }
+                }
+              }
+            }
             a {
               @include mixins.link-header-styles(20px);
             }
@@ -52,6 +118,14 @@
         background-color: #FAFAFA;
         margin-left: 130px;
         margin-right: 18px;
+        transition: background-color .3s linear;
+
+        &.active {
+          background-color: white;
+          .search-input {
+            background-color: white;
+          }
+        }
         .search-input {
           outline: none;
           border: none;
@@ -61,6 +135,7 @@
           font-weight: 600;
           font-size: 18px;
           color: variables.$title-color;
+          transition: background-color .3s linear;
         }
         .search-button {
           @include mixins.button-circle-styles(variables.$above-title-color);
@@ -90,3 +165,7 @@
     }
   }
 }
+//
+//@keyframes smooth-bg-change {
+//
+//}

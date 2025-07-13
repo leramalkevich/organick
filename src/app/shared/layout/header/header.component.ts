@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, signal, ViewChild} from '@angular/core';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -8,5 +8,19 @@ import {RouterLink} from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  activeInput = signal(false);
+  header = signal(false);
 
+  constructor() {
+  }
+
+  onFocus() {
+    this.activeInput.update(value => true);
+    this.header.update(value => true);
+  }
+
+  onBlur() {
+    this.activeInput.update(value => false);
+    this.header.update(value => false);
+  }
 }
