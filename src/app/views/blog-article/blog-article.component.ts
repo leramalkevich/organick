@@ -16,7 +16,6 @@ export class BlogArticleComponent implements OnInit {
   article:NewsType|undefined;
   constructor(private newsService:NewsService, private activatedRoute: ActivatedRoute) {
     this.news = this.newsService.news();
-
   }
 
   ngOnInit() {

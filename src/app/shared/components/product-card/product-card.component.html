@@ -1,4 +1,4 @@
-<section class="card" *ngIf="product">
+<section routerLink="/shop-single/{{product.id}}" class="card" *ngIf="product">
   <div class="product-category">{{product.category}}</div>
   <div class="product-image" style="background-image: url({{pathToImage + product.image}})"></div>
   <div class="product-info">

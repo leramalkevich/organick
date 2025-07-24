@@ -8,6 +8,7 @@ export const routes: Routes = [
     {path: '', component: MainComponent},
     {path:'about-us', loadComponent: ()=>import('./views/about/about.component').then((m)=>m.AboutComponent)},
     {path:'shop', loadComponent:()=>import('./views/shop/shop.component').then((m)=>m.ShopComponent)},
+    {path:'shop-single/:id', loadComponent:()=>import('./views/shop-single/shop-single.component').then((m)=>m.ShopSingleComponent)},
     {path:'blog', loadComponent:()=>import('./views/blog/blog.component').then((m)=>m.BlogComponent)},
     {path:'blog-article/:id', loadComponent:()=>import('./views/blog-article/blog-article.component').then((m)=>m.BlogArticleComponent)},
     {path:'our-team', loadComponent:()=>import('./views/team/team.component').then((m)=>m.TeamComponent)},

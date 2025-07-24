@@ -15,6 +15,6 @@ export class ShopComponent implements OnInit {
   products: CardType[] = [];
   constructor(private productsService:ProductsService) {}
   ngOnInit() {
-    this.products = this.productsService.getProducts();
+    this.products = this.productsService.products();
   }
 }

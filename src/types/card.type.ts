@@ -5,5 +5,6 @@ export type CardType = {
   title: string,
   oldPrice: string,
   newPrice: string,
-  reviews: number
+  reviews: number,
+  quantity?:number
 }

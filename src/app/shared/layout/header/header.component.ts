@@ -1,5 +1,6 @@
-import {Component, ElementRef, signal, ViewChild} from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,17 @@ import {RouterLink} from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   activeInput = signal(false);
   header = signal(false);
+  cart:number = 0;
 
-  constructor() {
+  constructor(private cartService: CartService) {}
+  ngOnInit() {
+    this.cartService.count$
+      .subscribe(count=>{
+        this.cart = count;
+      });
   }
 
   onFocus() {

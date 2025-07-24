@@ -1,0 +1,162 @@
+@use "../../../assets/styles/fonts";
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins";
+
+.shop-single-main-title {
+  background-image: url("../../../assets/images/bg-images/shop/shop-single-bg-image1.png");
+  @include mixins.main-title-bg-styles();
+  background-size: contain;
+  &::after {
+    content: "";
+    background-image: url("../../../assets/images/bg-images/shop/shop-single-bg-image2.png");
+    @include mixins.main-title-after-style();
+  }
+  .container {
+    padding: 184px 0;
+    .main-title {
+      @include mixins.title-text-styles(70px);
+      text-align: center;
+    }
+  }
+}
+
+.shop-single-block {
+  padding: 133px 0 140px 0;
+  .container {
+      .shop-single-product-card {
+        margin-bottom: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .product-card-image {
+          width: 600px;
+          height: 600px;
+          border-radius: 30px;
+          background-color: variables.$light-grey-bg-color;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+        .product-card-info {
+          max-width: 658px;
+          padding: 106px 0;
+          .product-card-title {
+            @include mixins.title-text-styles(40px);
+            font-weight: 600;
+            margin-bottom: 9px;
+          }
+          .product-card-review {
+            margin-bottom: 9px;
+            svg {
+              margin: 0 2px;
+            }
+          }
+          .product-card-price-block {
+            display: flex;
+            align-items: center;
+            font-family: OpenSans, sans-serif;
+            margin-bottom: 27px;
+            .old-price {
+
+              font-weight: 600;
+              font-size: 20px;
+              color: #B8B8B8;
+              text-decoration: line-through;
+              margin-right: 9px;
+            }
+            .new-price {
+              font-weight: 700;
+              font-size: 25px;
+              color: variables.$title-color;
+            }
+          }
+          .product-card-description {
+            margin-bottom: 35px;
+          }
+          .product-card-action {
+            display: flex;
+            align-items: center;
+            .quantity {
+              margin-right: 20px;
+              label {
+                margin-right: 22px;
+                font-weight: 700;
+                font-size: 20px;
+              }
+              input {
+                border-radius: 16px;
+                border: 2px solid variables.$title-color;
+                width: 134px;
+                padding: 28px;
+                box-sizing: border-box;
+                text-align: center;
+              }
+            }
+            .add-to-card {
+              .button {
+                @include mixins.button-styles(213px, variables.$title-color, white);
+              }
+            }
+          }
+        }
+      }
+    .shop-single-product-card-description {
+      max-width: 1140px;
+      margin: 0 auto;
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 27px;
+        .button {
+          &.description {
+            @include mixins.button-styles(363px, variables.$social-link-bg-color, variables.$title-color);
+            margin-right: 20px;
+            &:hover {
+              box-shadow: 0px 0px 30px 0px rgba(variables.$title-color,0.5);
+              transition: box-shadow .3s linear;
+            }
+            &.active {
+              @include mixins.button-styles(363px, variables.$title-color, white);
+            }
+          }
+          &.additional {
+            @include mixins.button-styles(309px, variables.$social-link-bg-color, variables.$title-color);
+            &:hover {
+              box-shadow: 0px 0px 30px 0px rgba(variables.$title-color,0.5);
+              transition: box-shadow .3s linear;
+            }
+            &.active {
+              @include mixins.button-styles(309px, variables.$title-color, white);
+            }
+          }
+        }
+      }
+      .info-blocks {
+        .info-block {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.related {
+  padding-bottom: 20px;
+  .container {
+    .related-title {
+      @include mixins.title-text-styles(50px);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .related-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.subscribe {
+  padding: 120px 0;
+}

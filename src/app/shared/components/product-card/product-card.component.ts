@@ -1,10 +1,11 @@
 import {Component, Input} from '@angular/core';
 import {CardType} from '../../../../types/card.type';
 import {CommonModule} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'product-card',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'
 })

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, signal} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -156,6 +156,8 @@ export class ProductsService {
     let offeredProducts = this.getProducts().sort(()=> 0.5 - Math.random());
     return offeredProducts.slice(0, number);
   }
+
+  products = signal(this.getProducts());
 
   constructor() { }
 }
