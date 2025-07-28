@@ -1,11 +1,24 @@
-<div class="subscribe">
+<section class="subscribe" [formGroup]="subscribeForm">
   <div class="subscribe-text-block">
     <div class="subscribe-title">
       Subscribe to our Newsletter
     </div>
-    <div class="subscribe-action">
-      <input type="text" class="input subscribe-input" placeholder="Your Email Address">
-      <button class="button">Subscribe</button>
+    <div class="actions">
+      <div class="subscribe-action" #subscribe>
+        <input type="text" class="input subscribe-input" placeholder="Your Email Address"
+               [ngStyle]="{'border-color': subscribeForm.get('email')?.invalid && (subscribeForm.get('email')?.dirty) ? 'red' : ''}" formControlName="email">
+        <button class="button" (click)="showPopUp()">Subscribe</button>
+      </div>
+      <div *ngIf="(subscribeForm.get('email')?.invalid && (subscribeForm.get('email')?.dirty))">
+        <div class="error-feedback" *ngIf="subscribeForm.get('email')?.errors?.['required']">
+          Email is required
+        </div>
+        <div class="error-feedback" *ngIf="subscribeForm.get('email')?.errors?.['email']">
+          Invalid email
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<pop-up></pop-up>

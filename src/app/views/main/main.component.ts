@@ -9,10 +9,12 @@ import {NewsService} from '../../shared/services/news.service';
 import {NewsType} from '../../../types/news.type';
 import {NewsCardComponent} from '../../shared/components/news-card/news-card.component';
 import {ProductsService} from '../../shared/services/products.service';
+import {PopUpService} from '../../shared/services/pop-up.service';
+import {PopUpComponent} from '../../shared/components/pop-up/pop-up.component';
 
 @Component({
   selector: 'app-main',
-  imports: [ProductCardComponent, CommonModule, CarouselModule, SubscribeComponent, RouterLink, NewsCardComponent],
+  imports: [ProductCardComponent, CommonModule, CarouselModule, SubscribeComponent, RouterLink, NewsCardComponent, PopUpComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
@@ -75,7 +77,7 @@ export class MainComponent implements OnInit {
   mainNews: NewsType[] = [];
   buttonShort:boolean|undefined;
 
-  constructor(private newsService: NewsService, private productsService: ProductsService) {
+  constructor(private newsService: NewsService, private productsService: ProductsService, private popUpService:PopUpService) {
     effect(() => {
       this.newsService.mainNews().then((data) =>{
         this.mainNews = data;
@@ -89,5 +91,7 @@ export class MainComponent implements OnInit {
     this.products = this.productsService.getRandomProducts(8);
     this.offerProducts = this.productsService.getRandomProducts(4);
   }
-
+  showPopUp(){
+    this.popUpService.showPopUp();
+  }
 }
