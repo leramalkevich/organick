@@ -125,33 +125,84 @@
 
 <section class="send-a-message-block">
   <div class="container">
-    <div class="form-for-a-message">
+    <div class="form-for-a-message" [formGroup]="userMessageForm" #userMessage>
       <div class="user-data-block">
         <div class="form-input">
           <label for="fullName">Full Name*</label>
-          <input class="input" type="text" id="fullName" placeholder="Your Email Address">
+          <input class="input" type="text" id="fullName" placeholder="Your Full Name" formControlName="fullName"
+                 [ngStyle]="{'border-color': userMessageForm.get('fullName')?.invalid &&
+                           (userMessageForm.get('fullName')?.dirty || userMessageForm.get('fullName')?.touched) ? 'red' : ''}">
+          <div *ngIf="(userMessageForm.get('fullName')?.invalid && (userMessageForm.get('fullName')?.dirty || userMessageForm.get('fullName')?.touched))">
+            <div class="error-feedback" *ngIf="userMessageForm.get('fullName')?.errors?.['required']">
+              Your name is required
+            </div>
+            <div class="error-feedback" *ngIf="userMessageForm.get('fullName')?.errors?.['pattern']">
+              Only English is allowed
+            </div>
+          </div>
         </div>
         <div class="form-input">
           <label for="email">Your Email*</label>
-          <input class="input" type="email" id="email" placeholder="example@yourmail.com">
+          <input class="input" type="email" id="email" placeholder="example@yourmail.com" formControlName="email"
+                 [ngStyle]="{'border-color': userMessageForm.get('email')?.invalid &&
+                           (userMessageForm.get('email')?.dirty || userMessageForm.get('email')?.touched) ? 'red' : ''}">
+          <div *ngIf="(userMessageForm.get('email')?.invalid && (userMessageForm.get('email')?.dirty || userMessageForm.get('email')?.touched))">
+            <div class="error-feedback" *ngIf="userMessageForm.get('email')?.errors?.['required']">
+              Your email is required
+            </div>
+            <div class="error-feedback" *ngIf="userMessageForm.get('email')?.errors?.['email']">
+              Invalid email
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="user-data-block">
         <div class="form-input">
           <label for="company">Company*</label>
-          <input class="input" type="text" id="company" placeholder="yourcompany name here">
+          <input class="input" type="text" id="company" placeholder="your company name here" formControlName="company"
+                 [ngStyle]="{'border-color': userMessageForm.get('company')?.invalid &&
+                           (userMessageForm.get('company')?.dirty || userMessageForm.get('company')?.touched) ? 'red' : ''}">
+          <div *ngIf="(userMessageForm.get('company')?.invalid && (userMessageForm.get('company')?.dirty || userMessageForm.get('company')?.touched))">
+            <div class="error-feedback" *ngIf="userMessageForm.get('company')?.errors?.['required']">
+              Your company's name is required
+            </div>
+            <div class="error-feedback" *ngIf="userMessageForm.get('company')?.errors?.['pattern']">
+              Only English is allowed
+            </div>
+          </div>
         </div>
         <div class="form-input">
           <label for="subject">Subject*</label>
-          <input class="input" type="text" id="subject" placeholder="how can we help">
+          <input class="input" type="text" id="subject" placeholder="how can we help" formControlName="subject"
+                 [ngStyle]="{'border-color': userMessageForm.get('subject')?.invalid &&
+                           (userMessageForm.get('subject')?.dirty || userMessageForm.get('subject')?.touched) ? 'red' : ''}">
+          <div *ngIf="(userMessageForm.get('subject')?.invalid && (userMessageForm.get('subject')?.dirty || userMessageForm.get('subject')?.touched))">
+            <div class="error-feedback" *ngIf="userMessageForm.get('subject')?.errors?.['required']">
+              Inform us how we can help
+            </div>
+            <div class="error-feedback" *ngIf="userMessageForm.get('subject')?.errors?.['pattern']">
+              Only English is allowed
+            </div>
+          </div>
         </div>
       </div>
       <div class="form-input message">
         <label for="message">Message*</label>
-        <textarea class="input input-message" id="message" placeholder="hello there,i would like to talk about how to..."></textarea>
+        <textarea class="input input-message" id="message" placeholder="hello there,i would like to talk about how to..."
+                  formControlName="text" [ngStyle]="{'border-color': userMessageForm.get('text')?.invalid &&
+                           (userMessageForm.get('text')?.dirty || userMessageForm.get('text')?.touched) ? 'red' : ''}"></textarea>
+        <div *ngIf="(userMessageForm.get('text')?.invalid && (userMessageForm.get('text')?.dirty || userMessageForm.get('text')?.touched))">
+          <div class="error-feedback" *ngIf="userMessageForm.get('text')?.errors?.['required']">
+            Enter your message
+          </div>
+          <div class="error-feedback" *ngIf="userMessageForm.get('text')?.errors?.['pattern']">
+            Only English is allowed
+          </div>
+        </div>
       </div>
       <div class="action">
-        <button class="button send-a-message">Send Message</button>
+        <button class="button send-a-message" (click)="sendMessage()">Send Message</button>
       </div>
     </div>
   </div>
@@ -162,3 +213,5 @@
     <subscribe></subscribe>
   </div>
 </section>
+
+<pop-up></pop-up>

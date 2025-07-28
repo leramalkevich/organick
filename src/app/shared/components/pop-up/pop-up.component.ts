@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {PopUpService} from '../../services/pop-up.service';
 import {CommonModule} from '@angular/common';
 
@@ -8,7 +8,7 @@ import {CommonModule} from '@angular/common';
   templateUrl: './pop-up.component.html',
   styleUrl: './pop-up.component.scss'
 })
-export class PopUpComponent implements OnInit, OnDestroy {
+export class PopUpComponent implements OnInit {
   isShown: boolean = false;
   @ViewChild('innerPopupText')innerPopupText:ElementRef|undefined;
 
@@ -19,9 +19,6 @@ export class PopUpComponent implements OnInit, OnDestroy {
     this.popUpService.isShown$.subscribe((isShown: boolean) => {
       this.isShown = isShown;
     });
-  }
-  ngOnDestroy() {
-    this.popUpService.isShown$.unsubscribe();
   }
 
   hidePopUp() {

@@ -20,7 +20,7 @@ export class SubscribeComponent {
   click(event:Event){
     if (!this.subscribe?.nativeElement.contains(event.target)) {
       this.subscribeForm.reset();
-      this.subscribeForm.markAllAsTouched();
+      this.subscribeForm.markAsUntouched();
     }
   }
   constructor(private popUpService: PopUpService) {
