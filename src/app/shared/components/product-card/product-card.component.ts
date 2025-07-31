@@ -19,5 +19,5 @@ export class ProductCardComponent {
     newPrice: '',
     reviews: 0
   }
-  pathToImage:string = '/images/products/';
+  pathToImage:string = 'images/products/';
 }

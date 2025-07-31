@@ -8,7 +8,7 @@ export class ExpertsService {
     return [
       {
         fullName: 'Giovani Bacardo',
-        image: '/images/team/person1.png',
+        image: 'images/team/person1.png',
         jobTitle: 'Farmer',
         socials: {
           facebook: 'https://facebook.com',
@@ -17,7 +17,7 @@ export class ExpertsService {
       },
       {
         fullName: 'Marianne Loreno',
-        image: '/images/team/person2.png',
+        image: 'images/team/person2.png',
         jobTitle: 'Designer',
         socials: {
           facebook: 'https://facebook.com',
@@ -27,7 +27,7 @@ export class ExpertsService {
       },
       {
         fullName: 'Riga Pelore',
-        image: '/images/team/person3.png',
+        image: 'images/team/person3.png',
         jobTitle: 'Farmer',
         socials: {
           facebook: 'https://facebook.com',
@@ -37,7 +37,7 @@ export class ExpertsService {
       },
       {
         fullName: 'Keira Knightley',
-        image: '/images/team/person4.png',
+        image: 'images/team/person4.png',
         jobTitle: 'Farmer',
         socials: {
           facebook: 'https://facebook.com',
@@ -46,7 +46,7 @@ export class ExpertsService {
       },
       {
         fullName: 'Scott Lawrence',
-        image: '/images/team/person5.png',
+        image: 'images/team/person5.png',
         jobTitle: 'Designer',
         socials: {
           facebook: 'https://facebook.com',
@@ -56,7 +56,7 @@ export class ExpertsService {
       },
       {
         fullName: 'Karen Allen',
-        image: '/images/team/person6.png',
+        image: 'images/team/person6.png',
         jobTitle: 'Farmer',
         socials: {
           facebook: 'https://facebook.com',

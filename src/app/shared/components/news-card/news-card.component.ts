@@ -20,6 +20,6 @@ export class NewsCardComponent {
     subTitleText: '',
     text: ''
   }
-  pathToImage: string = '/images/news/';
+  pathToImage: string = 'images/news/';
   @Input()shortButton: boolean|undefined;
 }
