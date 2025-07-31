@@ -29,7 +29,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }, "src/assets"
+              }, {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+              }
             ],
             "styles": [
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
