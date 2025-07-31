@@ -1,0 +1,1 @@
+import{T as e,h as o}from"./chunk-DAVJPNEO.js";var r=class t{count=0;count$=new o;setCount(n){this.count=this.count+n,this.count$.next(this.count)}constructor(){}static \u0275fac=function(c){return new(c||t)};static \u0275prov=e({token:t,factory:t.\u0275fac,providedIn:"root"})};export{r as a};
